@@ -1,0 +1,19 @@
+<h1>Showing <%= @arduino.name %></h1>
+<p id="notice"><%= notice %></p>
+
+<table class="show">
+  <tr>
+    <th>Name</th>
+    <th>Port</th>
+    <th>Speed</th>
+  </tr>
+  <tr>
+    <td><%= @arduino.name %></td>
+    <td><%= @arduino.port %></td>
+    <td><%= @arduino.speed %></td>
+  </tr>
+</table>
+
+
+<%= link_to 'Edit', edit_arduino_path(@arduino) %> |
+<%= link_to 'Back', arduinos_path %>

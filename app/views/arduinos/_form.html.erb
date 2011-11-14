@@ -1,0 +1,28 @@
+<%= form_for(@arduino) do |f| %>
+
+  <% if @arduino.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@arduino.errors.count, "error") %> prohibited this arduino from being saved:</h2>
+
+      <ul>
+      <% @arduino.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <%= f.label "Name" %>
+    <%= f.text_field :name %>
+
+    <%= f.label "Port" %>
+    <%= f.text_field :port %>
+
+    <%= f.label "Speed" %>
+    <%= f.text_field :speed %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

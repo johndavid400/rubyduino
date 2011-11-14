@@ -1,0 +1,30 @@
+<h1>Playground</h1>
+
+<% @arduinos.each do |a| %>
+  <%= a.name %>
+<% end %>
+
+
+<p />
+
+<h3>Play</h3>
+
+
+  <% form_tag(:action => "send_command", :method => :post) do %>
+
+    <%= label_tag :red_led %>
+    <%= check_box_tag(:redled) %>
+
+    <%= label_tag :green_led %>
+    <%= check_box_tag(:greenled) %>
+
+    <%= label_tag :all_off %>
+    <%= check_box_tag(:off) %>
+
+    <%= label_tag :all_on %>
+    <%= check_box_tag(:on) %>
+
+    <%= submit_tag 'Save' %>
+
+<% end %>
+
