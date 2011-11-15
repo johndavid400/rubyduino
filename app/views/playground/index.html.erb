@@ -1,30 +1,91 @@
-<h1>Playground</h1>
+<table>
+  <th>
+    <h1>Output</h1>
+  </th>
+  <th>
+    <h1>Update</h1>
+  </th>
 
-<% @arduinos.each do |a| %>
-  <%= a.name %>
-<% end %>
+  <tr>
+    <td>
+      <h3>Green LED<h3>
+    </td>
+    <td>
+      <% form_tag(:action => "greenled", :method => :post) do %>
+        <% if @redpin.active? && @greenpin.active? %>
+          <%= submit_tag 'Green LED', :class => "yellow" %>
+        <% elsif @greenpin.active? %>
+          <%= submit_tag 'Green LED', :class => "green" %>
+        <% else %>
+         <%= submit_tag 'Green LED' %>
+        <% end %>
+      <% end %>
+    </td>
+  </tr>
 
+  <tr>
+    <td>
+      <h3>Red LED<h3>
+    </td>
+    <td>
+      <% form_tag(:action => "redled", :method => :post) do %>
+        <% if @redpin.active? && @greenpin.active? %>
+          <%= submit_tag 'Red LED', :class => "yellow" %>
+        <% elsif @redpin.active? %>
+          <%= submit_tag 'Red LED', :class => "red" %>
+        <% else %>
+         <%= submit_tag 'Red LED' %>
+        <% end %>
+      <% end %>
+    </td>
+  </tr>
 
-<p />
+  <tr>
+    <td>
+      <h3>Red LED 2<h3>
+    </td>
+    <td>
+      <% form_tag(:action => "redled2", :method => :post) do %>
+        <% if @redpin2.active? %>
+          <%= submit_tag 'Red LED 2', :class => "red" %>
+        <% else %>
+         <%= submit_tag 'Red LED 2' %>
+        <% end %>
+      <% end %>
+    </td>
+  </tr>
 
-<h3>Play</h3>
+  <tr>
+    <td>
+      <h3>Blink<h3>
+    </td>
+    <td>
+      <% form_tag(:action => "blink", :method => :post) do %>
+          <%= submit_tag 'Blink' %>
+      <% end %>
+    </td>
+  </tr>
 
+  <tr>
+    <td>
+      <h3>All Off<h3>
+    </td>
+    <td>
+      <% form_tag(:action => "turn_off", :method => :post) do %>
+          <%= submit_tag 'OFF' %>
+      <% end %>
+    </td>
+  </tr>
 
-  <% form_tag(:action => "send_command", :method => :post) do %>
+  <tr>
+    <td>
+      <h3>All On<h3>
+    </td>
+    <td>
+      <% form_tag(:action => "turn_on", :method => :post) do %>
+          <%= submit_tag 'ON' %>
+      <% end %>
+    </td>
+  </tr>
 
-    <%= label_tag :red_led %>
-    <%= check_box_tag(:redled) %>
-
-    <%= label_tag :green_led %>
-    <%= check_box_tag(:greenled) %>
-
-    <%= label_tag :all_off %>
-    <%= check_box_tag(:off) %>
-
-    <%= label_tag :all_on %>
-    <%= check_box_tag(:on) %>
-
-    <%= submit_tag 'Save' %>
-
-<% end %>
-
+</table>

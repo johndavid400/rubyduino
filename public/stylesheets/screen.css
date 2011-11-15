@@ -1,3 +1,15 @@
 .show {
   border: black 1px dotted;
 }
+
+.green {
+  background: #99ff33;
+}
+
+.yellow {
+  background: #FFD847;
+}
+
+.red {
+  background: #FF021C;
+}
