@@ -1,91 +1,87 @@
-<table>
-  <th>
-    <h1>Output</h1>
-  </th>
-  <th>
-    <h1>Update</h1>
-  </th>
+<div class="main">
+  <div class="playground">
 
-  <tr>
-    <td>
-      <h3>Green LED<h3>
-    </td>
-    <td>
-      <% form_tag(:action => "greenled", :method => :post) do %>
-        <% if @redpin.active? && @greenpin.active? %>
-          <%= submit_tag 'Green LED', :class => "yellow" %>
-        <% elsif @greenpin.active? %>
-          <%= submit_tag 'Green LED', :class => "green" %>
-        <% else %>
-         <%= submit_tag 'Green LED' %>
-        <% end %>
-      <% end %>
-    </td>
-  </tr>
+    <table>
 
-  <tr>
-    <td>
-      <h3>Red LED<h3>
-    </td>
-    <td>
-      <% form_tag(:action => "redled", :method => :post) do %>
-        <% if @redpin.active? && @greenpin.active? %>
-          <%= submit_tag 'Red LED', :class => "yellow" %>
-        <% elsif @redpin.active? %>
-          <%= submit_tag 'Red LED', :class => "red" %>
-        <% else %>
-         <%= submit_tag 'Red LED' %>
-        <% end %>
-      <% end %>
-    </td>
-  </tr>
+      <tr>
+        <th>
+          <h3>Output</h3>
+        </th>
+        <th>
+          <h3>Update</h3>
+        </th>
+      </tr>
 
-  <tr>
-    <td>
-      <h3>Red LED 2<h3>
-    </td>
-    <td>
-      <% form_tag(:action => "redled2", :method => :post) do %>
-        <% if @redpin2.active? %>
-          <%= submit_tag 'Red LED 2', :class => "red" %>
-        <% else %>
-         <%= submit_tag 'Red LED 2' %>
-        <% end %>
-      <% end %>
-    </td>
-  </tr>
+      <tr>
+        <td>Green LED</td>
+        <td>
+          <% form_tag(:action => "greenled", :method => :post) do %>
+            <% if @redpin.active? && @greenpin.active? %>
+              <%= submit_tag 'Green LED', :class => "yellow" %>
+            <% elsif @greenpin.active? %>
+              <%= submit_tag 'Green LED', :class => "green" %>
+            <% else %>
+              <%= submit_tag 'Green LED' %>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
 
-  <tr>
-    <td>
-      <h3>Blink<h3>
-    </td>
-    <td>
-      <% form_tag(:action => "blink", :method => :post) do %>
-          <%= submit_tag 'Blink' %>
-      <% end %>
-    </td>
-  </tr>
+      <tr>
+        <td>Red LED</td>
+        <td>
+          <% form_tag(:action => "redled", :method => :post) do %>
+            <% if @redpin.active? && @greenpin.active? %>
+              <%= submit_tag 'Red LED', :class => "yellow" %>
+            <% elsif @redpin.active? %>
+              <%= submit_tag 'Red LED', :class => "red" %>
+            <% else %>
+              <%= submit_tag 'Red LED' %>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
 
-  <tr>
-    <td>
-      <h3>All Off<h3>
-    </td>
-    <td>
-      <% form_tag(:action => "turn_off", :method => :post) do %>
-          <%= submit_tag 'OFF' %>
-      <% end %>
-    </td>
-  </tr>
+      <tr>
+        <td>Red LED 2</td>
+        <td>
+          <% form_tag(:action => "redled2", :method => :post) do %>
+            <% if @redpin2.active? %>
+              <%= submit_tag 'Red LED 2', :class => "red" %>
+            <% else %>
+              <%= submit_tag 'Red LED 2' %>
+            <% end %>
+          <% end %>
+        </td>
+      </tr>
 
-  <tr>
-    <td>
-      <h3>All On<h3>
-    </td>
-    <td>
-      <% form_tag(:action => "turn_on", :method => :post) do %>
-          <%= submit_tag 'ON' %>
-      <% end %>
-    </td>
-  </tr>
+      <tr>
+        <td>Blink</td>
+        <td>
+          <% form_tag(:action => "blink", :method => :post) do %>
+            <%= submit_tag 'Blink' %>
+          <% end %>
+        </td>
+      </tr>
 
-</table>
+      <tr>
+        <td>All Off</td>
+        <td>
+          <% form_tag(:action => "turn_off", :method => :post) do %>
+            <%= submit_tag 'OFF' %>
+          <% end %>
+        </td>
+      </tr>
+
+      <tr>
+        <td>All On</td>
+        <td>
+          <% form_tag(:action => "turn_on", :method => :post) do %>
+            <%= submit_tag 'ON' %>
+          <% end %>
+        </td>
+      </tr>
+
+    </table>
+  </div>
+</div>
