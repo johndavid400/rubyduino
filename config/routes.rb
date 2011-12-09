@@ -1,6 +1,7 @@
 Serial::Application.routes.draw do
 
   get "playground/index"
+  get "playground/test"
   resources :arduinos
   root :to => "playground#index"
 
@@ -12,5 +13,6 @@ Serial::Application.routes.draw do
   match "turn_on" => "playground#turn_on"
   match "blink" => "playground#blink"
 
+  match "pin" => "playground#pin"
 
 end
