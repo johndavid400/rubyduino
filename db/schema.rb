@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20111114224832) do
   end
 
   create_table "pins", :force => true do |t|
-    t.integer  "aruduino_id"
+    t.integer  "arduino_id"
     t.string   "name"
     t.integer  "number"
     t.datetime "created_at"

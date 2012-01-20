@@ -1,0 +1,30 @@
+<div class="main">
+  <div class="playground">
+
+    <table>
+
+      <tr>
+        <th>
+          <h3>Output</h3>
+        </th>
+        <th>
+          <h3>Update</h3>
+        </th>
+      </tr>
+
+
+      <% @pins.each do |pin| %>
+        <tr>
+          <td><%= pin.name %></td>
+          <td>
+            <% form_tag(:action => "pin", :method => :post) do %>
+              <%= hidden_field_tag :pin_number, pin.number %>
+                <%= submit_tag pin.name %>
+            <% end %>
+          </td>
+        </tr>
+    <% end %>
+
+    </table>
+  </div>
+</div>
