@@ -1,3 +1,9 @@
+GIT
+  remote: git://github.com/ryanb/nested_form.git
+  revision: 54da3123d9f1b14b37df608794508adccd6ac5ba
+  specs:
+    nested_form (0.1.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -34,6 +40,7 @@ GEM
     columnize (0.3.4)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    haml (3.1.4)
     i18n (0.5.0)
     json (1.6.1)
     linecache19 (0.5.12)
@@ -89,6 +96,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  haml
+  nested_form!
   rails (= 3.0.9)
   ruby-debug19
   serialport

@@ -1,0 +1,10 @@
+.main
+  .playground
+    %h3 Arduino
+    - form_tag(:action => "select_arduino", :method => :post) do
+      = select_tag "arduino", options_from_collection_for_select(Arduino.all, :id, :name)
+      %p
+      = submit_tag 'Select'
+      %p
+    = link_to "Create new Arduino", new_arduino_path
+

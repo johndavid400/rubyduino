@@ -11,15 +11,14 @@ td {
 }
 
 .main {
+  margin-top: 100px;
+  width: 500px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .playground {
-  position: relative;
-  text-align: center;
-  margin-left: 40%;
-  margin-top: 10%;
+  margin: 10px auto 0px auto;
 }
 
 .show {
@@ -30,8 +29,8 @@ td {
   background: #99ff33;
 }
 
-.yellow {
-  background: #FFD847;
+.blue {
+  background: #3399ff;
 }
 
 .red {

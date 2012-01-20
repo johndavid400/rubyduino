@@ -1,4 +1,4 @@
-<%= form_for(@arduino) do |f| %>
+<%= nested_form_for(@arduino) do |f| %>
 
   <% if @arduino.errors.any? %>
     <div id="error_explanation">
@@ -13,14 +13,35 @@
   <% end %>
 
 
-    <%= f.label "Name" %>
+    <%= f.label "Arduino Name" %>
+    <p />
     <%= f.text_field :name %>
-
+    <p />
     <%= f.label "Port" %>
+    <p />
     <%= f.text_field :port %>
-
+    <p />
     <%= f.label "Speed" %>
+    <p />
     <%= f.text_field :speed %>
+    <hr>
+
+    <%= f.fields_for :pins do |pin_form| %>
+      <%= pin_form.label "Pin Name" %>
+    <p />
+      <%= pin_form.text_field :name %>
+    <p />
+      <%= pin_form.label :number %>
+    <p />
+      <%= pin_form.text_field :number %>
+    <p />
+      <%= pin_form.label :active %>
+    <p />
+      <%= pin_form.check_box :active %>
+    <p />
+      <%= pin_form.link_to_remove "Remove this pin" %>
+    <% end %>
+    <p><%= f.link_to_add "Add a pin", :pins %></p>
 
   <div class="actions">
     <%= f.submit %>

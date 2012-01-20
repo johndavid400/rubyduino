@@ -8,6 +8,9 @@ gem 'rails', '3.0.9'
 gem 'sqlite3'
 gem 'ruby-debug19'
 gem 'serialport'
+gem 'haml'
+
+gem 'nested_form', :git => 'git://github.com/ryanb/nested_form.git'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -1,4 +1,4 @@
-<h1>Listing arduinos</h1>
+<h1>Listing Arduinos</h1>
 
 <table class="show">
   <tr>
@@ -6,17 +6,15 @@
     <th>Port</th>
     <th>Speed</th>
     <th colspan="3">Actions</th>
-    <th>Use</th>
   </tr>
 
 <% @arduinos.each do |arduino| %>
   <tr>
-    <td><%= link_to arduino.name, arduino %></td>
+    <td><%= link_to arduino.name, arduino_path(arduino) %></td>
     <td><%= arduino.port %></td>
     <td><%= arduino.speed %></td>
     <td><%= link_to 'Edit', edit_arduino_path(arduino) %></td>
     <td><%= link_to 'Destroy', arduino, :confirm => 'Are you sure?', :method => :delete %></td>
-    <td><%= link_to 'Use', arduino %></td>
   </tr>
 <% end %>
 </table>
