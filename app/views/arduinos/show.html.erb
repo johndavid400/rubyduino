@@ -3,7 +3,7 @@
 
 <table class="show">
   <tr>
-    <th>Name</th>
+    <th>Arduino name</th>
     <th>Port</th>
     <th>Speed</th>
   </tr>
@@ -14,5 +14,23 @@
   </tr>
 </table>
 
+<table class="show">
+  <h3>Pins</h3>
+  <tr>
+    <th>Name</th>
+    <th>Number</th>
+    <th>Active?</th>
+  </tr>
+  <p />
+  <% @arduino.pins.each do |pin| %>
+    <tr>
+      <td><%= pin.name %></td>
+      <td><%= pin.number %></td>
+      <td><%= pin.active %></td>
+    </tr>
+  <% end %>
+</table>
+
+  <p />
 <%= link_to 'Edit', edit_arduino_path(@arduino) %> |
 <%= link_to 'Back', arduinos_path %>
